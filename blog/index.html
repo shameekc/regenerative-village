@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Journal — Regenerative Village</title>
+  <meta name="description" content="Thinking out loud about regenerative land, co-ownership, and building community from the ground up.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .journal-hero {
+      padding: var(--space-3xl) var(--space-lg) var(--space-xl);
+      max-width: var(--max-width);
+      margin: 0 auto;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .journal-hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--color-ink);
+      margin-bottom: var(--space-sm);
+    }
+    .journal-hero p {
+      font-size: 1.05rem;
+      color: var(--color-ink-soft);
+      max-width: 50ch;
+    }
+    .journal-list {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: var(--space-2xl) var(--space-lg) var(--space-3xl);
+    }
+    .post-card {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: var(--space-lg);
+      padding: var(--space-xl) 0;
+      border-bottom: 1px solid var(--color-border);
+      text-decoration: none;
+      transition: opacity var(--transition);
+    }
+    .post-card:hover { opacity: 0.75; }
+    .post-card:last-child { border-bottom: none; }
+    .post-card-date {
+      font-size: 0.8rem;
+      color: var(--color-bark);
+      padding-top: 0.25em;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+    }
+    .post-card-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-mist);
+      margin-bottom: 0.4em;
+      font-weight: 500;
+    }
+    .post-card h2 {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 300;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: var(--color-ink);
+      margin-bottom: 0.6em;
+    }
+    .post-card p {
+      font-size: 0.95rem;
+      color: var(--color-ink-soft);
+      line-height: 1.6;
+      max-width: 60ch;
+    }
+    @media (max-width: 600px) {
+      .post-card { grid-template-columns: 1fr; gap: var(--space-xs); }
+      .journal-hero { padding: var(--space-xl) var(--space-sm) var(--space-lg); }
+      .journal-list { padding: var(--space-lg) var(--space-sm) var(--space-2xl); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href=".." class="nav-logo">Regenerative Village</a>
+    <div class="nav-links">
+      <a href="../about.html">The Vision</a>
+      <a href="." class="nav-active">Journal</a>
+      <a href="../index.html#waitlist" class="nav-cta">Join Waitlist</a>
+    </div>
+  </nav>
+
+  <div class="journal-hero">
+    <p class="section-label">Journal</p>
+    <h1>Thinking out loud.</h1>
+    <p>Dispatches from the process of building something we couldn't find anywhere else.</p>
+  </div>
+
+  <div class="journal-list">
+
+    <a href="founding-manifesto.html" class="post-card">
+      <div class="post-card-date">9 Jun 2026</div>
+      <div>
+        <p class="post-card-label">Founding Manifesto</p>
+        <h2>We Couldn't Find the Village. So We're Building One.</h2>
+        <p>A few years ago, a group of us started having the same conversation across different cities and different time zones. We wanted to live differently — not in an abstract, someday-we-should way.</p>
+      </div>
+    </a>
+
+  </div>
+
+  <footer style="border-top: 1px solid var(--color-border); padding: var(--space-xl) var(--space-lg); text-align: center;">
+    <p style="font-size: 0.8rem; color: var(--color-ink-soft);">© 2026 Regenerative Village. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
