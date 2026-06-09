@@ -560,6 +560,116 @@ a:hover { color: var(--color-ink); }
   margin-top: var(--space-xs);
 }
 
+/* ===== Blog Post ===== */
+.post-header {
+  background: var(--color-cream);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-3xl) var(--space-lg);
+}
+
+.post-header-inner {
+  max-width: var(--text-max);
+  margin: 0 auto;
+}
+
+.post-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+  margin-bottom: var(--space-md);
+}
+
+.post-meta {
+  font-size: 0.85rem;
+  color: var(--color-bark);
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.post-meta-sep {
+  opacity: 0.4;
+}
+
+.post-body {
+  padding: var(--space-3xl) var(--space-lg);
+}
+
+.post-body-inner {
+  max-width: var(--text-max);
+  margin: 0 auto;
+}
+
+.post-body p {
+  font-size: 1.05rem;
+  color: var(--color-ink-soft);
+  line-height: 1.8;
+  margin-bottom: 1.5em;
+}
+
+.post-body p:last-child {
+  margin-bottom: 0;
+}
+
+.post-body h2 {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--color-ink);
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.post-body strong {
+  font-weight: 500;
+  color: var(--color-ink);
+}
+
+.post-divider {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: var(--space-2xl) 0;
+}
+
+.post-cta {
+  background: var(--color-sage);
+  padding: var(--space-2xl) var(--space-lg);
+  text-align: center;
+}
+
+.post-cta-inner {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.post-cta h2 {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--color-white);
+  margin-bottom: var(--space-sm);
+}
+
+.post-cta p {
+  color: rgba(255,255,255,0.75);
+  margin-bottom: var(--space-lg);
+  font-size: 0.97rem;
+}
+
+.post-cta .btn-primary {
+  background: var(--color-white);
+  color: var(--color-sage);
+}
+.post-cta .btn-primary:hover {
+  background: var(--color-ink);
+  color: var(--color-white);
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 900px) {
   .hero {
