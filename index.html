@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regenerative Village — Co-own land. Restore nature. Build community.</title>
+  <meta name="description" content="A community co-owned regenerative village where people and nature thrive together. Join the waitlist.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="/" class="nav-logo">Regenerative Village</a>
+    <div class="nav-links">
+      <a href="/about.html">The Vision</a>
+      <a href="#waitlist" class="nav-cta">Join Waitlist</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow">An invitation</p>
+      <h1 class="hero-headline">
+        Co-own land.<br>
+        Restore nature.<br>
+        Build community.
+      </h1>
+      <p class="hero-sub">
+        A regenerative village — not a resort, not a commune — where a community of
+        good people co-owns land and lives in genuine relationship with the natural world.
+      </p>
+      <a href="#waitlist" class="btn-primary">Join the waitlist →</a>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-ring hero-ring--1"></div>
+      <div class="hero-ring hero-ring--2"></div>
+      <div class="hero-ring hero-ring--3"></div>
+      <div class="hero-leaf">
+        <svg viewBox="0 0 120 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M60 150 C60 150 10 100 10 55 C10 25 35 5 60 5 C85 5 110 25 110 55 C110 100 60 150 60 150Z" fill="currentColor" opacity="0.15"/>
+          <path d="M60 150 C60 150 10 100 10 55 C10 25 35 5 60 5 C85 5 110 25 110 55 C110 100 60 150 60 150Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+          <line x1="60" y1="150" x2="60" y2="20" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+          <path d="M60 80 C45 65 30 60 15 63" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
+          <path d="M60 100 C75 82 90 78 108 80" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
+          <path d="M60 60 C48 48 38 44 22 46" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pillars -->
+  <section class="pillars">
+    <div class="pillars-inner">
+      <div class="pillar">
+        <div class="pillar-icon">⌂</div>
+        <h3>Co-ownership</h3>
+        <p>The land and its future belong to the community — not to a developer, a fund, or a single family. Every co-owner has a stake and a voice.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">◎</div>
+        <h3>Regeneration</h3>
+        <p>We leave the land in better shape than we found it. Soil, water, biodiversity — tended as commons, not extracted as resources.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">◇</div>
+        <h3>Real community</h3>
+        <p>Not curated co-working aesthetics. A genuine practice of showing up — for shared meals, seasonal work, decisions that matter.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Waitlist -->
+  <section class="waitlist" id="waitlist">
+    <div class="waitlist-inner">
+      <div class="waitlist-copy">
+        <p class="section-label">Waitlist</p>
+        <h2>Be among the first co-owners.</h2>
+        <p class="waitlist-sub">
+          We're in early formation. No land acquired yet — but we're building the founding cohort now.
+          Sign up and we'll reach out when we're ready to bring co-owners in.
+        </p>
+        <ul class="waitlist-promise">
+          <li>No spam — ever.</li>
+          <li>One email when things are real.</li>
+          <li>Founding co-owners set the terms.</li>
+        </ul>
+      </div>
+      <div class="waitlist-form-wrap">
+        <form action="https://formsubmit.co/shameekc@gmail.com" method="POST" class="waitlist-form" id="waitlist-form">
+          <input type="hidden" name="_subject" value="New Regenerative Village waitlist signup">
+          <input type="hidden" name="_next" value="https://shameekc.github.io/regenerative-village/?joined=true">
+          <input type="hidden" name="_captcha" value="false">
+          <p class="hidden-field"><label>Don't fill this out: <input name="_honey"></label></p>
+
+          <div class="field">
+            <label for="name">Your name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Jane Doe"
+              required
+              autocomplete="name"
+            >
+          </div>
+          <div class="field">
+            <label for="email">Email address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="jane@example.com"
+              required
+              autocomplete="email"
+            >
+          </div>
+          <button type="submit" class="btn-primary btn-full">Count me in →</button>
+          <p class="form-legal">We store your name and email. That's it. No third-party marketing.</p>
+        </form>
+        <div class="form-success" id="form-success" aria-live="polite" hidden>
+          <div class="success-icon">✓</div>
+          <h3>You're on the list.</h3>
+          <p>We'll be in touch when the founding cohort opens. Thank you for caring about this.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="/" class="footer-logo">Regenerative Village</a>
+      <nav class="footer-nav">
+        <a href="/about.html">The Vision</a>
+        <a href="#waitlist">Join Waitlist</a>
+      </nav>
+      <p class="footer-copy">© 2026 Regenerative Village. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Show success state when redirected back after form submit
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('joined') === 'true') {
+      const form = document.getElementById('waitlist-form');
+      const success = document.getElementById('form-success');
+      if (form && success) {
+        form.hidden = true;
+        success.hidden = false;
+      }
+      const waitlistSection = document.getElementById('waitlist');
+      if (waitlistSection) {
+        setTimeout(() => waitlistSection.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+      }
+    }
+  </script>
+</body>
+</html>
