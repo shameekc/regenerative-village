@@ -143,19 +143,60 @@
   </footer>
 
   <script>
-    // Show success state when redirected back after form submit
     const params = new URLSearchParams(window.location.search);
-    if (params.get('joined') === 'true') {
-      const form = document.getElementById('waitlist-form');
-      const success = document.getElementById('form-success');
-      if (form && success) {
-        form.hidden = true;
-        success.hidden = false;
-      }
-      const waitlistSection = document.getElementById('waitlist');
-      if (waitlistSection) {
-        setTimeout(() => waitlistSection.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
-      }
+    const ref = params.get('ref') || '';
+
+    // Track page view
+    fetch('/api/track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ event: 'page_view', page: '/', ref: ref || undefined }),
+    }).catch(() => {});
+
+    // Form submission
+    const form = document.getElementById('waitlist-form');
+    const errorEl = document.getElementById('form-error');
+    const submitBtn = document.getElementById('submit-btn');
+
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        errorEl.style.display = 'none';
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Joining…';
+
+        const payload = {
+          name: form.name.value.trim(),
+          email: form.email.value.trim(),
+          ref: ref || undefined,
+        };
+
+        try {
+          const res = await fetch('/api/join', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          });
+          const data = await res.json();
+
+          if (!res.ok || !data.ok) {
+            throw new Error(data.error || 'Something went wrong. Please try again.');
+          }
+
+          fetch('/api/track', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ event: 'signup', page: '/', ref: ref || undefined }),
+          }).catch(() => {});
+
+          window.location.href = `/thank-you?slug=${encodeURIComponent(data.referralSlug)}`;
+        } catch (err) {
+          errorEl.textContent = err.message;
+          errorEl.style.display = 'block';
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Count me in →';
+        }
+      });
     }
   </script>
 </body>

@@ -1,0 +1,5 @@
+{"ts":"2026-06-09T08:04:06.309Z","cmd":"goto","args":"https://shameekc.github.io/regenerative-village/","origin":"https://shameekc.github.io/regenerative-village/","durationMs":1019,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-06-09T08:04:07.096Z","cmd":"screenshot","args":"/tmp/rv-homepage.png","origin":"https://shameekc.github.io/regenerative-village/","durationMs":725,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-06-09T08:04:18.261Z","cmd":"goto","args":"https://shameekc.github.io/regenerative-village/about.html","origin":"https://shameekc.github.io/regenerative-village/about.html","durationMs":353,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-06-09T08:04:18.690Z","cmd":"screenshot","args":"/tmp/rv-about.png","origin":"https://shameekc.github.io/regenerative-village/about.html","durationMs":368,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-06-09T08:04:19.173Z","cmd":"responsive","args":"/tmp/rv-responsive","origin":"https://shameekc.github.io/regenerative-village/about.html","durationMs":428,"status":"ok","hasCookies":false,"mode":"launched"}

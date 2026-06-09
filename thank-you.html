@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You're on the list — Regenerative Village</title>
+  <meta name="description" content="You're on the Regenerative Village waitlist. Share your link to bring your people.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .ty-page {
+      min-height: 100svh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+    }
+    .ty-main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-3xl) var(--space-lg);
+    }
+    .ty-card {
+      width: 100%;
+      max-width: 580px;
+    }
+    .ty-check {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--color-sage);
+      color: white;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--space-lg);
+    }
+    .ty-headline {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--color-ink);
+      margin-bottom: var(--space-sm);
+    }
+    .ty-sub {
+      font-size: 1rem;
+      color: var(--color-ink-soft);
+      line-height: 1.65;
+      margin-bottom: var(--space-xl);
+    }
+    .referral-section {
+      background: var(--color-cream);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin-bottom: var(--space-xl);
+    }
+    .referral-section h2 {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--color-ink);
+      margin-bottom: var(--space-xs);
+    }
+    .referral-section p {
+      font-size: 0.92rem;
+      color: var(--color-ink-soft);
+      line-height: 1.6;
+      margin-bottom: var(--space-md);
+    }
+    .referral-link-row {
+      display: flex;
+      gap: 0.5rem;
+      align-items: stretch;
+    }
+    .referral-link-input {
+      flex: 1;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      color: var(--color-ink);
+      background: var(--color-white);
+      border: 1.5px solid var(--color-mist);
+      border-radius: var(--radius-md);
+      padding: 0.75em 1em;
+      outline: none;
+      min-width: 0;
+    }
+    .copy-btn {
+      flex-shrink: 0;
+      background: var(--color-sage);
+      color: white;
+      border: none;
+      border-radius: var(--radius-md);
+      padding: 0.75em 1.2em;
+      font-family: var(--font-sans);
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background var(--transition);
+      white-space: nowrap;
+    }
+    .copy-btn:hover { background: var(--color-ink); }
+    .copy-btn.copied { background: #3a7a52; }
+
+    .pioneer-tiers {
+      margin-top: var(--space-md);
+      padding-top: var(--space-md);
+      border-top: 1px solid var(--color-border);
+    }
+    .tier {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .tier-badge {
+      flex-shrink: 0;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-bark);
+      background: var(--color-mist);
+      padding: 0.3em 0.7em;
+      border-radius: var(--radius-full);
+      margin-top: 0.1em;
+    }
+    .tier-text {
+      font-size: 0.875rem;
+      color: var(--color-ink-soft);
+      line-height: 1.55;
+    }
+    .tier-text strong { color: var(--color-ink); }
+
+    .share-row {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4em;
+      font-family: var(--font-sans);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--color-ink-soft);
+      background: var(--color-cream);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-full);
+      padding: 0.55em 1.1em;
+      cursor: pointer;
+      transition: all var(--transition);
+      text-decoration: none;
+    }
+    .share-btn:hover {
+      background: var(--color-mist);
+      color: var(--color-ink);
+    }
+    @media (max-width: 600px) {
+      .ty-main { padding: var(--space-xl) var(--space-sm); }
+      .referral-link-row { flex-direction: column; }
+      .copy-btn { width: 100%; }
+    }
+  </style>
+</head>
+<body class="ty-page">
+
+  <nav class="nav">
+    <a href="/" class="nav-logo">Regenerative Village</a>
+    <div class="nav-links">
+      <a href="/about.html">The Vision</a>
+    </div>
+  </nav>
+
+  <main class="ty-main">
+    <div class="ty-card">
+      <div class="ty-check" aria-hidden="true">✓</div>
+      <h1 class="ty-headline" id="headline">You're on the list.</h1>
+      <p class="ty-sub" id="subtitle">
+        We'll be in touch when the founding cohort opens. In the meantime — bring your people.
+      </p>
+
+      <div class="referral-section">
+        <h2>Your referral link</h2>
+        <p>
+          You know people who belong here. Share this link — every referral helps shape
+          who this community becomes.
+        </p>
+        <div class="referral-link-row">
+          <input
+            type="text"
+            class="referral-link-input"
+            id="referral-link-input"
+            readonly
+            value=""
+            aria-label="Your referral link"
+          >
+          <button class="copy-btn" id="copy-btn" type="button">Copy link</button>
+        </div>
+
+        <div class="pioneer-tiers">
+          <div class="tier">
+            <span class="tier-badge">3 referrals</span>
+            <span class="tier-text"><strong>Community Pioneer</strong> — first access to financial details and an early site-visit invite.</span>
+          </div>
+          <div class="tier">
+            <span class="tier-badge">5 referrals</span>
+            <span class="tier-text"><strong>Founder Pioneer</strong> — a one-to-one call with the founder and your name on the founding community list.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="share-row">
+        <button class="share-btn" id="share-native" style="display:none">
+          ↑ Share
+        </button>
+        <a class="share-btn" id="share-linkedin" href="#" target="_blank" rel="noopener">
+          Share on LinkedIn
+        </a>
+        <a class="share-btn" id="share-whatsapp" href="#" target="_blank" rel="noopener">
+          Share on WhatsApp
+        </a>
+        <a class="share-btn" id="share-email" href="#">
+          Send by email
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="/" class="footer-logo">Regenerative Village</a>
+      <p class="footer-copy">© 2026 Regenerative Village. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get('slug') || '';
+    const returning = params.get('returning') === '1';
+
+    const siteUrl = window.location.origin;
+    const referralUrl = slug ? `${siteUrl}/join?ref=${encodeURIComponent(slug)}` : '';
+
+    // Update headline for returning members
+    if (returning) {
+      document.getElementById('headline').textContent = "You're already on the list.";
+      document.getElementById('subtitle').textContent =
+        "Thanks for coming back. Here's your referral link — keep sharing.";
+    }
+
+    // Populate referral link
+    if (referralUrl) {
+      document.getElementById('referral-link-input').value = referralUrl;
+    }
+
+    // Copy button
+    const copyBtn = document.getElementById('copy-btn');
+    copyBtn.addEventListener('click', async () => {
+      if (!referralUrl) return;
+      try {
+        await navigator.clipboard.writeText(referralUrl);
+        copyBtn.textContent = 'Copied!';
+        copyBtn.classList.add('copied');
+        setTimeout(() => {
+          copyBtn.textContent = 'Copy link';
+          copyBtn.classList.remove('copied');
+        }, 2500);
+      } catch {
+        document.getElementById('referral-link-input').select();
+        document.execCommand('copy');
+      }
+    });
+
+    // Share buttons
+    const shareText = 'I just joined the waitlist for Regenerative Village — a community co-owned regenerative village. Join me:';
+
+    document.getElementById('share-linkedin').href =
+      `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(referralUrl)}`;
+
+    document.getElementById('share-whatsapp').href =
+      `https://wa.me/?text=${encodeURIComponent(shareText + ' ' + referralUrl)}`;
+
+    document.getElementById('share-email').href =
+      `mailto:?subject=Join%20me%20on%20the%20Regenerative%20Village%20waitlist&body=${encodeURIComponent(shareText + '\n\n' + referralUrl)}`;
+
+    // Native share API (mobile)
+    if (navigator.share && referralUrl) {
+      const nativeBtn = document.getElementById('share-native');
+      nativeBtn.style.display = 'inline-flex';
+      nativeBtn.addEventListener('click', () => {
+        navigator.share({
+          title: 'Join Regenerative Village',
+          text: shareText,
+          url: referralUrl,
+        }).catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>
