@@ -20,7 +20,6 @@
     </div>
   </nav>
 
-  <!-- Hero -->
   <section class="hero">
     <div class="hero-content">
       <p class="hero-eyebrow">An invitation</p>
@@ -52,7 +51,6 @@
     </div>
   </section>
 
-  <!-- Pillars -->
   <section class="pillars">
     <div class="pillars-inner">
       <div class="pillar">
@@ -73,7 +71,6 @@
     </div>
   </section>
 
-  <!-- Waitlist -->
   <section class="waitlist" id="waitlist">
     <div class="waitlist-inner">
       <div class="waitlist-copy">
@@ -95,28 +92,13 @@
           <input type="hidden" name="_next" value="https://shameekc.github.io/regenerative-village/?joined=true">
           <input type="hidden" name="_captcha" value="false">
           <p class="hidden-field"><label>Don't fill this out: <input name="_honey"></label></p>
-
           <div class="field">
             <label for="name">Your name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Jane Doe"
-              required
-              autocomplete="name"
-            >
+            <input type="text" id="name" name="name" placeholder="Jane Doe" required autocomplete="name">
           </div>
           <div class="field">
             <label for="email">Email address</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="jane@example.com"
-              required
-              autocomplete="email"
-            >
+            <input type="email" id="email" name="email" placeholder="jane@example.com" required autocomplete="email">
           </div>
           <button type="submit" class="btn-primary btn-full">Count me in →</button>
           <p class="form-legal">We store your name and email. That's it. No third-party marketing.</p>
@@ -130,7 +112,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="footer-inner">
       <a href="." class="footer-logo">Regenerative Village</a>
@@ -144,59 +125,17 @@
 
   <script>
     const params = new URLSearchParams(window.location.search);
-    const ref = params.get('ref') || '';
-
-    // Track page view
-    fetch('/api/track', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ event: 'page_view', page: '/', ref: ref || undefined }),
-    }).catch(() => {});
-
-    // Form submission
-    const form = document.getElementById('waitlist-form');
-    const errorEl = document.getElementById('form-error');
-    const submitBtn = document.getElementById('submit-btn');
-
-    if (form) {
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        errorEl.style.display = 'none';
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Joining…';
-
-        const payload = {
-          name: form.name.value.trim(),
-          email: form.email.value.trim(),
-          ref: ref || undefined,
-        };
-
-        try {
-          const res = await fetch('/api/join', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload),
-          });
-          const data = await res.json();
-
-          if (!res.ok || !data.ok) {
-            throw new Error(data.error || 'Something went wrong. Please try again.');
-          }
-
-          fetch('/api/track', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ event: 'signup', page: '/', ref: ref || undefined }),
-          }).catch(() => {});
-
-          window.location.href = `/thank-you?slug=${encodeURIComponent(data.referralSlug)}`;
-        } catch (err) {
-          errorEl.textContent = err.message;
-          errorEl.style.display = 'block';
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Count me in →';
-        }
-      });
+    if (params.get('joined') === 'true') {
+      const form = document.getElementById('waitlist-form');
+      const success = document.getElementById('form-success');
+      if (form && success) {
+        form.hidden = true;
+        success.hidden = false;
+      }
+      const waitlistSection = document.getElementById('waitlist');
+      if (waitlistSection) {
+        setTimeout(() => waitlistSection.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+      }
     }
   </script>
 </body>
